@@ -1,0 +1,8 @@
+# Configuration for coverage.py checks
+# https://coverage.readthedocs.io/en/latest/config.html
+
+[run]
+source = solutions
+
+[report]
+show_missing = True
