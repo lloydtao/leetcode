@@ -7,53 +7,9 @@ the nodes of the first two lists.
 
 Return the head of the merged linked list.
 """
-from __future__ import annotations
 from typing import Dict, List, Optional, Set, Tuple
 
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def list_to_node(nums: List[int]) -> Optional[ListNode]:
-        """Take a list and return the head of its respective linked list.
-
-        Args:
-            nums (List[int]): List of numbers
-
-        Returns:
-            Optional[ListNode]: Head node of the linked list
-        """
-        # Initialise linked list with a dummy node
-        dummy = ListNode()
-        current = dummy
-        # Iterate through each value in list
-        for n in nums:
-            # Link new node for this value
-            next = ListNode(val=n, next=None)
-            current.next = next
-            # Move pointer along
-            current = current.next
-        # Discard dummy by returning node proceeding it
-        return dummy.next
-
-    def node_to_list(node: Optional[ListNode]) -> List[int]:
-        """Take the head of a linked list and return its respective list.
-
-        Args:
-            head (Optional[ListNode]): Head node of the linked list
-
-        Returns:
-            List[int]: List of numbers
-        """
-        # Initialise list
-        nums = []
-        while node:
-            # Add value and go to next node
-            nums.append(node.val)
-            node = node.next
-        return nums
+from utils.linked_list import ListNode
 
 
 class Solution:
