@@ -14,6 +14,40 @@ from typing import Dict, List, Optional, Set, Tuple
 
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
+        """Perform cycle detection to find the duplicate number. We can achieve this in
+        O(n) time complexity and O(1) space complexity through Floyd's hare and
+        tortoise algorithm. The missing value can then be inferred from the duplicate
+        value and the expected sum of the list.
+
+        For example, if 4 replaces 1, then the total sum will be (4 - 1) = 3 larger
+        than the expected sum. Knowing that 4 is the duplicate, and as the sum is 3
+        larger than expected, the value that it replaced must be (4 - 3) = 1.
+
+        Args:
+            nums (List[int]): Array of integers after the duplication error
+
+        Returns:
+            List[int]: The duplicated value followed by the missing value
+        """
+        # Get duplicate value through Floyd's hare and tortoise
+        total = sum(nums)
+        duplicate = None
+        for n in nums:
+            index = abs(n)
+            # Check if value revisited
+            if nums[index - 1] < 0:
+                duplicate = index  # Value revisited, store as duplicate
+                break
+            # Make negative to flag as visited
+            nums[index - 1] *= -1
+        # Find missing value by taking duplicate and subtracting the difference of sums
+        n = len(nums)
+        expected = n * (n + 1) // 2
+        missing = duplicate - (total - expected)  # ∵ difference = duplicate - missing
+        # Return the values
+        return [duplicate, missing]
+
+    def findErrorNums_sets(self, nums: List[int]) -> List[int]:
         """Compare the sum of the list with the sum of its set to find the duplicate
         value. The missing value can then be inferred from the duplicate value and
         the expected sum of the list.
