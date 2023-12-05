@@ -8,7 +8,7 @@ in `T` that has both `p` and `q` as descendants. Nodes are descendants of themse
 """
 from typing import Dict, List, Optional, Set, Tuple
 
-from utils.binary_tree import TreeNode
+from .utils.binary_tree import TreeNode
 
 
 class Solution:
