@@ -6,7 +6,7 @@ If there are two middle nodes, return the second middle node.
 """
 from typing import Dict, List, Optional, Set, Tuple
 
-from utils.linked_list import ListNode
+from .utils.linked_list import ListNode
 
 
 class Solution:

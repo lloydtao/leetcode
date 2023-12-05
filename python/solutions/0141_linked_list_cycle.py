@@ -6,7 +6,7 @@ Return True if there is a cycle in the linked list. Otherwise, return False.
 """
 from typing import Dict, List, Optional, Set, Tuple
 
-from utils.linked_list import ListNode
+from .utils.linked_list import ListNode
 
 
 class Solution:
