@@ -4,7 +4,7 @@ Given the `root` of a binary tree, invert the tree, and return its root.
 """
 from typing import Dict, List, Optional, Set, Tuple
 
-from utils.binary_tree import TreeNode
+from .utils.binary_tree import TreeNode
 
 
 class Solution:

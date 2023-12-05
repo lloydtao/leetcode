@@ -8,7 +8,7 @@ For this problem, a height-balanced binary tree is defined as:
 """
 from typing import Dict, List, Optional, Set, Tuple
 
-from utils.binary_tree import TreeNode
+from .utils.binary_tree import TreeNode
 
 
 class Solution:

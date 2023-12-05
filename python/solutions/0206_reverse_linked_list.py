@@ -4,7 +4,7 @@ Given the head of a singly linked list, reverse the list, and return the reverse
 """
 from typing import Dict, List, Optional, Set, Tuple
 
-from utils.linked_list import ListNode
+from .utils.linked_list import ListNode
 
 
 class Solution:
